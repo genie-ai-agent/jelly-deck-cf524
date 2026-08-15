@@ -282,6 +282,7 @@ dd{
   .credit{position:absolute;right:var(--pad);font-size:10px}
   .cover{justify-content:center}
   h2{max-width:24ch}
+  .line{max-width:44ch}
   .grid,.terms,.people,.steps{max-width:780px}
   .stats{grid-template-columns:repeat(4,1fr);max-width:980px}
   .stat{border-right:1px solid var(--rule);padding:0 28px}
