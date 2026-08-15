@@ -55,9 +55,30 @@ var slideObs = new IntersectionObserver(function (entries) {
     if (!en.isIntersecting) return;
     current = slides.indexOf(en.target);
     dotBtns.forEach(function (b, j) { b.setAttribute('aria-current', j === current ? 'true' : 'false'); });
+    if (typeof syncPager === 'function') syncPager();
   });
 }, { threshold: 0.5 });
 slides.forEach(function (s) { slideObs.observe(s); });
+
+/* bottom pager */
+var prevBtn = document.getElementById('prev');
+var nextBtn = document.getElementById('next');
+var curEl = document.getElementById('cur');
+document.getElementById('tot').textContent = slides.length;
+
+function go(i) {
+  var t = Math.min(slides.length - 1, Math.max(0, i));
+  slides[t].scrollIntoView({ behavior: 'smooth' });
+}
+prevBtn.addEventListener('click', function () { go(current - 1); });
+nextBtn.addEventListener('click', function () { go(current + 1); });
+
+function syncPager() {
+  curEl.textContent = current + 1;
+  prevBtn.disabled = current === 0;
+  nextBtn.disabled = current === slides.length - 1;
+}
+syncPager();
 
 /* keyboard */
 addEventListener('keydown', function (e) {
