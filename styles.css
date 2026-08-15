@@ -34,7 +34,7 @@ body{
   flex-direction:column;
   justify-content:center;
   padding:var(--pad);
-  padding-bottom:calc(var(--pad) + 56px);
+  padding-bottom:calc(var(--pad) + 92px);
 }
 
 .label{
@@ -218,13 +218,23 @@ dd{
 .nav{
   position:fixed;
   left:0;right:0;bottom:0;
-  height:56px;
   display:flex;
+  flex-direction:column;
   align-items:center;
   justify-content:center;
-  gap:22px;
+  gap:9px;
+  padding:11px 16px 13px;
   background:var(--paper);
   border-top:1px solid var(--rule);
+}
+.navctl{display:flex;align-items:center;gap:22px}
+.credit{
+  font-family:'JetBrains Mono',monospace;
+  font-size:9px;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  color:var(--mute);
+  text-align:center;
 }
 .nav button{
   appearance:none;
@@ -258,6 +268,9 @@ dd{
 }
 
 @media (min-width:820px){
+  .slide{padding-bottom:calc(var(--pad) + 56px)}
+  .nav{flex-direction:row;height:56px;padding:0 var(--pad)}
+  .credit{position:absolute;right:var(--pad);font-size:10px}
   .cover{justify-content:center}
   h2{max-width:24ch}
   .grid,.terms,.people,.steps{max-width:780px}
