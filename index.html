@@ -3,110 +3,103 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Jelly Jelly — Investor Deck</title>
-<meta name="description" content="Jelly Jelly: real human moments. Video and money, anywhere in the world.">
+<title>Jelly Jelly</title>
+<meta name="description" content="Jelly Jelly. Real human moments. Video and money, anywhere.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-<nav class="dots" aria-label="Slides"></nav>
-
 <main id="deck">
 
-  <section class="slide cover" data-label="Cover">
-    <div class="inner">
-      <h1 class="wordmark">JELLY<br>JELLY</h1>
+  <section class="slide cover" id="s1">
+    <h1 class="wordmark">Jelly<br>Jelly</h1>
+  </section>
+
+  <section class="slide" id="s2">
+    <p class="label">01 / Problem</p>
+    <h2>Social media is AI slop.</h2>
+    <p class="line">Overproduced. Optimized. Fake.</p>
+  </section>
+
+  <section class="slide" id="s3">
+    <p class="label">02 / Problem</p>
+    <h2>Paying people globally is worse.</h2>
+    <p class="line">Days. Fees. Borders.</p>
+  </section>
+
+  <section class="slide" id="s4">
+    <p class="label">03 / Solution</p>
+    <h2>Real moments. Money anywhere.</h2>
+    <p class="line">Jelly Jelly.</p>
+  </section>
+
+  <section class="slide" id="s5">
+    <p class="label">04 / Product</p>
+    <ol class="steps">
+      <li>Record</li>
+      <li>Post</li>
+      <li>Pay</li>
+    </ol>
+    <p class="line">One app. No editing. No borders.</p>
+  </section>
+
+  <section class="slide" id="s6">
+    <p class="label">05 / Market</p>
+    <table class="grid">
+      <thead>
+        <tr><th></th><th>Video</th><th>Money</th><th>Global</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Instagram</td><td>Yes</td><td>No</td><td>Yes</td></tr>
+        <tr><td>TikTok</td><td>Yes</td><td>No</td><td>Yes</td></tr>
+        <tr><td>Venmo</td><td>No</td><td>Yes</td><td>No</td></tr>
+        <tr class="us"><td>Jelly Jelly</td><td>Yes</td><td>Yes</td><td>Yes</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="slide" id="s7">
+    <p class="label">06 / Traction</p>
+    <div class="stats">
+      <div class="stat"><span class="num">40K</span><span class="cap">Users now</span></div>
+      <div class="stat"><span class="num">3K</span><span class="cap">Active now</span></div>
+      <div class="stat"><span class="num">1M</span><span class="cap">Users next</span></div>
+      <div class="stat"><span class="num">500K</span><span class="cap">Active next</span></div>
     </div>
   </section>
 
-  <section class="slide" data-label="Problem">
-    <div class="inner">
-      <p class="eyebrow">01 — Problem</p>
-      <h2>Social media stopped being social.</h2>
-      <ol class="list">
-        <li><span class="n">A</span><span class="t"><b>AI slop.</b> Feeds are filling with synthetic content nobody asked for.</span></li>
-        <li><span class="n">B</span><span class="t"><b>Overproduced everything.</b> Posting takes a script, a crew, an edit. Regular people opted out.</span></li>
-        <li><span class="n">C</span><span class="t"><b>Paying people globally is a nightmare.</b> Wrong country, wrong app, wrong week.</span></li>
-      </ol>
-      <p class="note">Billions of viewers, almost no creators, and no clean way to move value between them.</p>
-    </div>
+  <section class="slide" id="s8">
+    <p class="label">07 / Team</p>
+    <ul class="people">
+      <li><span class="who">Iqram Magdon-Ismail</span><span class="what">Co-founder, Venmo</span></li>
+      <li><span class="who">Andrew Kortina</span><span class="what">Co-founder, Venmo</span></li>
+    </ul>
   </section>
 
-  <section class="slide" data-label="Solution">
-    <div class="inner">
-      <p class="eyebrow">02 — Solution</p>
-      <h2>Jelly Jelly. Real human moments, with money attached.</h2>
-      <ol class="list">
-        <li><span class="n">1</span><span class="t"><b>Spontaneous video.</b> Short, unedited, two-person calls. No studio, no script.</span></li>
-        <li><span class="n">2</span><span class="t"><b>Payments in the feed.</b> Send money to anyone, anywhere, as easily as a comment.</span></li>
-        <li><span class="n">3</span><span class="t"><b>Human by design.</b> The clip is proof a person was actually there.</span></li>
-      </ol>
-      <p class="note">Venmo made payments social. Jelly makes social pay.</p>
-    </div>
+  <section class="slide" id="s9">
+    <p class="label">08 / Raise</p>
+    <dl class="terms">
+      <div><dt>Raising</dt><dd>$2M</dd></div>
+      <div><dt>Cap</dt><dd>$15M SAFE</dd></div>
+      <div><dt>From</dt><dd>Strategic partners</dd></div>
+    </dl>
   </section>
 
-  <section class="slide" data-label="Product">
-    <div class="inner">
-      <p class="eyebrow">03 — Product</p>
-      <h2>Record. Post. Pay.</h2>
-      <div class="frames" id="frames"></div>
-    </div>
-  </section>
-
-  <section class="slide" data-label="Market">
-    <div class="inner">
-      <p class="eyebrow">04 — Market</p>
-      <h2>Nobody owns both sides.</h2>
-      <div class="table-wrap"><table id="landscape"></table></div>
-      <p class="note">Social apps can't move money. Payment apps have no reason to be opened. Jelly is one product.</p>
-    </div>
-  </section>
-
-  <section class="slide" data-label="Traction">
-    <div class="inner">
-      <p class="eyebrow">05 — Traction</p>
-      <h2>40K users. 3K daily.</h2>
-      <div class="metrics" id="metrics"></div>
-      <p class="note">Target: 1M users, 500K actives.</p>
-    </div>
-  </section>
-
-  <section class="slide" data-label="Team">
-    <div class="inner">
-      <p class="eyebrow">06 — Team</p>
-      <h2>We have built this before.</h2>
-      <div class="team" id="team"></div>
-    </div>
-  </section>
-
-  <section class="slide" data-label="Raise">
-    <div class="inner">
-      <p class="eyebrow">07 — The Raise</p>
-      <h2>$2M on a $15M SAFE.</h2>
-      <div class="terms" id="terms"></div>
-      <p class="note">Strategic partners only: distribution, payments rails, creator networks.</p>
-    </div>
-  </section>
-
-  <section class="slide closing" data-label="Close">
-    <div class="inner">
-      <h2 class="big">Join Jelly.</h2>
-      <p class="lede">Iqram Magdon-Ismail · jellyjelly.com</p>
-    </div>
+  <section class="slide close" id="s10">
+    <h2 class="big">Join Jelly.</h2>
+    <p class="line"><a href="https://jellyjelly.com">jellyjelly.com</a></p>
   </section>
 
 </main>
 
-<nav class="pager" aria-label="Slide navigation">
-  <button type="button" id="prev" aria-label="Previous slide">&#8592;</button>
-  <span class="count"><span id="cur">1</span> / <span id="tot">9</span></span>
-  <button type="button" id="next" aria-label="Next slide">&#8594;</button>
+<nav class="nav" aria-label="Slides">
+  <button id="prev" aria-label="Previous slide">&larr;</button>
+  <span id="counter">1 / 10</span>
+  <button id="next" aria-label="Next slide">&rarr;</button>
 </nav>
 
-<script src="data.js"></script>
 <script src="script.js"></script>
 </body>
 </html>

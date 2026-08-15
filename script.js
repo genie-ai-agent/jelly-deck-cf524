@@ -1,115 +1,51 @@
-/* product frames */
-document.getElementById('frames').innerHTML = FRAMES.map(function (f) {
-  return '<article class="frame reveal">' +
-    '<span class="step">' + f.step + '</span>' +
-    '<h3>' + f.title + '</h3>' +
-    '<p>' + f.body + '</p>' +
-    '<div class="demo">' + f.demo.map(function (l) { return '<div>' + l + '</div>'; }).join('') + '</div>' +
-  '</article>';
-}).join('');
+const deck = document.getElementById('deck');
+const slides = [...document.querySelectorAll('.slide')];
+const prev = document.getElementById('prev');
+const next = document.getElementById('next');
+const counter = document.getElementById('counter');
 
-/* market table */
-document.getElementById('landscape').innerHTML =
-  '<thead><tr>' + LANDSCAPE.head.map(function (h) { return '<th>' + h + '</th>'; }).join('') + '</tr></thead>' +
-  '<tbody>' + LANDSCAPE.rows.map(function (r) {
-    return '<tr class="' + (r.us ? 'us' : '') + '"><td>' + r.name + '</td>' +
-      r.cells.map(function (c) { return '<td class="mark">' + LANDSCAPE.marks[c] + '</td>'; }).join('') + '</tr>';
-  }).join('') + '</tbody>';
+let index = 0;
 
-/* metrics */
-function fmt(n) { return n >= 1000000 ? (n / 1000000) + 'M' : Math.round(n / 1000) + 'K'; }
-document.getElementById('metrics').innerHTML = METRICS.map(function (m) {
-  return '<div class="metric reveal"><div class="k">' + m.k + '</div>' +
-    '<div class="v" data-to="' + m.v + '">0</div>' +
-    '<div class="s">' + m.s + '</div></div>';
-}).join('');
-
-/* team */
-document.getElementById('team').innerHTML = TEAM.map(function (p) {
-  return '<div class="person reveal"><div class="name">' + p.name + '</div>' +
-    '<div class="role">' + p.role + '</div>' +
-    '<div class="bio">' + p.bio + '</div></div>';
-}).join('');
-
-/* terms */
-document.getElementById('terms').innerHTML = TERMS.map(function (t) {
-  return '<div class="term reveal"><div class="k">' + t.k + '</div><div class="v">' + t.v + '</div></div>';
-}).join('');
-
-/* dot nav */
-var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
-var dots = document.querySelector('.dots');
-dots.innerHTML = slides.map(function (s, i) {
-  return '<button type="button" aria-label="' + s.dataset.label + '" data-i="' + i + '"' +
-    (i === 0 ? ' aria-current="true"' : '') + '></button>';
-}).join('');
-var dotBtns = Array.prototype.slice.call(dots.querySelectorAll('button'));
-dots.addEventListener('click', function (e) {
-  var b = e.target.closest('button');
-  if (b) slides[+b.dataset.i].scrollIntoView({ behavior: 'smooth' });
-});
-
-var current = 0;
-var slideObs = new IntersectionObserver(function (entries) {
-  entries.forEach(function (en) {
-    if (!en.isIntersecting) return;
-    current = slides.indexOf(en.target);
-    dotBtns.forEach(function (b, j) { b.setAttribute('aria-current', j === current ? 'true' : 'false'); });
-    if (typeof syncPager === 'function') syncPager();
-  });
-}, { threshold: 0.5 });
-slides.forEach(function (s) { slideObs.observe(s); });
-
-/* bottom pager */
-var prevBtn = document.getElementById('prev');
-var nextBtn = document.getElementById('next');
-var curEl = document.getElementById('cur');
-document.getElementById('tot').textContent = slides.length;
+function paint(i) {
+  index = Math.max(0, Math.min(slides.length - 1, i));
+  counter.textContent = (index + 1) + ' / ' + slides.length;
+  prev.disabled = index === 0;
+  next.disabled = index === slides.length - 1;
+  slides.forEach(function (s, n) { s.classList.toggle('on', n === index); });
+}
 
 function go(i) {
-  var t = Math.min(slides.length - 1, Math.max(0, i));
-  slides[t].scrollIntoView({ behavior: 'smooth' });
+  var target = Math.max(0, Math.min(slides.length - 1, i));
+  slides[target].scrollIntoView({ behavior: 'smooth', block: 'start' });
+  paint(target);
 }
-prevBtn.addEventListener('click', function () { go(current - 1); });
-nextBtn.addEventListener('click', function () { go(current + 1); });
 
-function syncPager() {
-  curEl.textContent = current + 1;
-  prevBtn.disabled = current === 0;
-  nextBtn.disabled = current === slides.length - 1;
-}
-syncPager();
+prev.addEventListener('click', function () { go(index - 1); });
+next.addEventListener('click', function () { go(index + 1); });
 
-/* keyboard */
-addEventListener('keydown', function (e) {
-  var map = { ArrowDown: 1, ArrowRight: 1, PageDown: 1, ArrowUp: -1, ArrowLeft: -1, PageUp: -1 };
-  var step = map[e.key];
-  if (!step) return;
-  e.preventDefault();
-  var t = Math.min(slides.length - 1, Math.max(0, current + step));
-  slides[t].scrollIntoView({ behavior: 'smooth' });
+document.addEventListener('keydown', function (e) {
+  if (['ArrowRight', 'ArrowDown', 'PageDown', ' '].indexOf(e.key) > -1) { e.preventDefault(); go(index + 1); }
+  if (['ArrowLeft', 'ArrowUp', 'PageUp'].indexOf(e.key) > -1) { e.preventDefault(); go(index - 1); }
+  if (e.key === 'Home') { e.preventDefault(); go(0); }
+  if (e.key === 'End') { e.preventDefault(); go(slides.length - 1); }
 });
 
-/* reveal + count up */
-function countUp(el) {
-  var to = +el.dataset.to, dur = 800, t0 = performance.now();
-  function tick(now) {
-    var p = Math.min(1, (now - t0) / dur);
-    var e = 1 - Math.pow(1 - p, 3);
-    el.textContent = fmt(to * e);
-    if (p < 1) requestAnimationFrame(tick);
-    else el.textContent = fmt(to);
-  }
-  requestAnimationFrame(tick);
-}
-
-var revObs = new IntersectionObserver(function (entries) {
-  entries.forEach(function (en) {
-    if (!en.isIntersecting) return;
-    en.target.classList.add('in');
-    var v = en.target.querySelector('.v[data-to]');
-    if (v && !v.dataset.done) { v.dataset.done = '1'; countUp(v); }
-    revObs.unobserve(en.target);
+var io = new IntersectionObserver(function (entries) {
+  entries.forEach(function (entry) {
+    if (entry.isIntersecting && entry.intersectionRatio > 0.6) {
+      paint(slides.indexOf(entry.target));
+    }
   });
-}, { threshold: 0.25 });
-Array.prototype.slice.call(document.querySelectorAll('.reveal')).forEach(function (el) { revObs.observe(el); });
+}, { root: deck, threshold: [0.6] });
+slides.forEach(function (s) { io.observe(s); });
+
+var y0 = null;
+deck.addEventListener('touchstart', function (e) { y0 = e.touches[0].clientY; }, { passive: true });
+deck.addEventListener('touchend', function (e) {
+  if (y0 === null) return;
+  var dy = y0 - e.changedTouches[0].clientY;
+  if (Math.abs(dy) > 60) go(index + (dy > 0 ? 1 : -1));
+  y0 = null;
+}, { passive: true });
+
+paint(0);
