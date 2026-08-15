@@ -66,6 +66,12 @@ h2{
 .line a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--ink)}
 
 .cover{justify-content:flex-end}
+.mark{
+  width:clamp(72px,19vw,132px);
+  height:auto;
+  display:block;
+  margin-bottom:clamp(18px,4vh,34px);
+}
 .wordmark{
   font-weight:700;
   font-size:clamp(3.6rem,19vw,11rem);
@@ -261,6 +267,7 @@ dd{
 .slide.on>*{opacity:1;transform:none}
 .slide.on>*:nth-child(2){transition-delay:.07s}
 .slide.on>*:nth-child(3){transition-delay:.14s}
+.slide.on>*:nth-child(4){transition-delay:.21s}
 
 @media (max-width:560px){
   .names li{flex-direction:column;align-items:flex-start;gap:7px}
