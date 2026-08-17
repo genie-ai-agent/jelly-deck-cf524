@@ -7,6 +7,9 @@ br.wide { display: none; }
   --paper:#fff;
   --rule:rgba(0,0,0,.16);
   --mute:rgba(0,0,0,.55);
+  --warm-a:#111111;
+  --warm-b:#B4441C;
+  --warm-c:#C9861C;
   --pad:clamp(20px,6vw,88px);
 }
 
@@ -399,6 +402,35 @@ dd{
 .people.five .what{margin-top:5px;font-size:10px}
 
 .product h2{font-size:clamp(1.55rem,6.2vw,3.3rem);max-width:22ch}
+
+/* three warm steps */
+.flow{list-style:none;max-width:900px}
+.flow li{
+  display:flex;
+  align-items:baseline;
+  gap:clamp(11px,3vw,20px);
+  padding:clamp(9px,2vh,16px) 0;
+  border-bottom:1px solid;
+}
+.flow .fn{
+  flex:none;
+  font-family:'JetBrains Mono',monospace;
+  font-size:11px;
+  letter-spacing:.2em;
+  opacity:.75;
+}
+.flow .ft{
+  font-weight:700;
+  font-size:clamp(1.3rem,5.6vw,2.7rem);
+  line-height:1.06;
+  letter-spacing:-.03em;
+  max-width:24ch;
+}
+.flow .f1{color:var(--warm-a);border-bottom-color:rgba(0,0,0,.18)}
+.flow .f2{color:var(--warm-b);border-bottom-color:rgba(180,68,28,.32)}
+.flow .f3{color:var(--warm-c);border-bottom-color:rgba(201,134,28,.36)}
+.pair.tight{margin-top:clamp(14px,2.6vh,26px)}
+.pair.tight img{height:clamp(96px,17vh,210px)}
 .pair{
   display:grid;
   grid-template-columns:1fr 1fr;
