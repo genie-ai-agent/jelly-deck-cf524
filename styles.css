@@ -527,3 +527,6 @@ dd{
   #deck{scroll-behavior:auto}
   .slide>*{opacity:1;transform:none;transition:none}
 }
+
+/* photos are decorative: keep them out of text selection/copy */
+img { -webkit-user-select: none; user-select: none; }
