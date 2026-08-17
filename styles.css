@@ -342,6 +342,14 @@ dd{
   border-top:1px solid var(--rule);
 }
 .product .note a{color:var(--ink)}
+.product .closer{
+  margin-top:clamp(12px,2.4vh,20px);
+  font-size:clamp(.82rem,3.4vw,1.05rem);
+  line-height:1.45;
+  letter-spacing:-.01em;
+  color:var(--ink);
+  max-width:32ch;
+}
 @media (max-width:400px){
   .pair figcaption{font-size:9px;letter-spacing:.06em}
 }
