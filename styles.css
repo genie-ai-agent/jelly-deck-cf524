@@ -3,6 +3,7 @@ br.wide { display: none; }
 
 :root{
   --ink:#000;
+  --green:#0BA84A;
   --paper:#fff;
   --rule:rgba(0,0,0,.16);
   --mute:rgba(0,0,0,.55);
@@ -123,7 +124,10 @@ h2{
 }
 .grid td{color:var(--mute)}
 .grid td:first-child{color:var(--ink)}
-.grid .us td{color:var(--ink);font-weight:500;border-bottom:1px solid var(--ink)}
+.grid .us td{color:var(--green);font-weight:500;border-bottom:1px solid var(--green)}
+.grid .us td:first-child{color:var(--green)}
+.market h2{margin-bottom:28px}
+.market .grid{margin-top:0}
 
 .stats{display:grid;grid-template-columns:1fr 1fr}
 .stat{padding:clamp(14px,3vh,26px) 0;border-bottom:1px solid var(--rule)}
