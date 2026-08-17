@@ -271,9 +271,18 @@ dd{
 
 .revenue li{justify-content:flex-start;max-width:26ch;line-height:1.08}
 
+.people.five li{padding:clamp(9px,1.8vh,16px) 0;gap:clamp(12px,3vw,22px)}
+.people.five img{width:clamp(40px,10.5vw,60px);height:clamp(40px,10.5vw,60px)}
+.people.five .who{font-size:clamp(1.05rem,4.8vw,1.9rem)}
+.people.five .what{margin-top:5px;font-size:10px}
+
 @media (max-width:560px){
   .names li{flex-direction:column;align-items:flex-start;gap:7px}
   .names li span{text-align:left}
+}
+
+@media (max-width:420px){
+  .people.five .what{letter-spacing:.1em}
 }
 
 @media (min-width:820px){
