@@ -1,3 +1,24 @@
+// ---- wall of jellies (slide 04), data lives in data.js ----
+(function renderWall() {
+  var wall = document.getElementById('wall');
+  if (!wall || !window.JELLIES) return;
+  wall.innerHTML = window.JELLIES.map(function (j) {
+    var tag = '<span class="jtag">' + j.tag + '</span>';
+    if (!j.url) {
+      return '<div class="jcard empty">' + tag +
+        '<span class="jslot" aria-hidden="true"></span>' +
+        '<span class="jmeta">open slot</span></div>';
+    }
+    var thumb = j.thumb
+      ? '<img src="' + j.thumb + '" alt="" loading="lazy"><span class="play" aria-hidden="true"></span>'
+      : '<span class="play" aria-hidden="true"></span>';
+    return '<a class="jcard" href="' + j.url + '" target="_blank" rel="noopener">' + tag +
+      '<span class="jthumb">' + thumb + '</span>' +
+      '<span class="jtitle">' + j.title + '</span>' +
+      '<span class="jmeta">' + j.handle + ' &middot; watch &rarr;</span></a>';
+  }).join('');
+})();
+
 const deck = document.getElementById('deck');
 const slides = [...document.querySelectorAll('.slide')];
 const prev = document.getElementById('prev');
