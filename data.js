@@ -23,6 +23,13 @@ window.JELLIES = [
     handle: '@jonny',
     thumb: 'img/jelly3.jpg'
   },
+  {
+    tag: 'Thanking sponsors',
+    url: 'https://jellyjelly.com/watch/01KWMCDT6P1V4EK9KPFZMPYF7T',
+    title: 'Appreciating sponsors for an awesome kids\u2019 program',
+    handle: '@GREAT',
+    thumb: 'img/jelly4.jpg'
+  },
   { tag: 'Life update' },
   { tag: 'Selling something' },
   { tag: 'Local recommendation' }
