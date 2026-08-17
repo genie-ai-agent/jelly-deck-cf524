@@ -29,8 +29,5 @@ window.JELLIES = [
     title: 'Appreciating sponsors for an awesome kids\u2019 program',
     handle: '@GREAT',
     thumb: 'img/jelly4.jpg'
-  },
-  { tag: 'Life update' },
-  { tag: 'Selling something' },
-  { tag: 'Local recommendation' }
+  }
 ];

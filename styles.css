@@ -86,7 +86,20 @@ h2{
   height:auto;
 }
 
-.close h2.big{font-size:clamp(2.8rem,14vw,7rem)}
+.close{position:relative;justify-content:flex-end;overflow:hidden;background:#000}
+.close .stars{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center 46%;
+  filter:grayscale(1) contrast(1.06) brightness(.82);
+  opacity:1;
+}
+.close h2.big,.close .line{position:relative;z-index:1;color:#fff}
+.close h2.big{font-size:clamp(2.8rem,13vw,6.4rem)}
+.close .line a{color:#fff;border-bottom-color:rgba(255,255,255,.6)}
 
 .steps{list-style:none;counter-reset:s}
 .steps li{
@@ -349,7 +362,7 @@ dd{
   background-size:7px 7px;
 }
 @media (min-width:700px){
-  .jellies .wall{grid-template-columns:repeat(3,1fr)}
+  .jellies .wall{grid-template-columns:repeat(4,1fr);max-width:1180px}
 }
 
 .duo{font-size:clamp(1.85rem,7.2vw,3.9rem);line-height:1.02;max-width:26ch}
@@ -392,8 +405,8 @@ dd{
   color:var(--mute);
   max-width:52ch;
   margin-top:clamp(16px,3vh,26px);
-  padding-top:clamp(14px,2.6vh,20px);
-  border-top:1px solid var(--rule);
+  padding-top:0;
+  border-top:0;
 }
 
 .people.five li{padding:clamp(9px,1.8vh,16px) 0;gap:clamp(12px,3vw,22px)}
