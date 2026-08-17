@@ -304,6 +304,48 @@ dd{
 .people.five .who{font-size:clamp(1.05rem,4.8vw,1.9rem)}
 .people.five .what{margin-top:5px;font-size:10px}
 
+.product h2{font-size:clamp(1.55rem,6.2vw,3.3rem);max-width:22ch}
+.pair{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:clamp(10px,2.4vw,20px);
+  margin-top:clamp(18px,3.4vh,32px);
+  max-width:760px;
+}
+.pair figure{margin:0;min-width:0}
+.pair img{
+  display:block;
+  width:100%;
+  height:clamp(132px,26vh,300px);
+  object-fit:cover;
+  object-position:center 30%;
+  filter:grayscale(1) contrast(1.06);
+  border:1px solid var(--rule);
+  background:#eee;
+}
+.pair figcaption{
+  margin-top:9px;
+  font-family:'JetBrains Mono',monospace;
+  font-size:10px;
+  line-height:1.5;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--mute);
+}
+.product .note{
+  font-size:clamp(.68rem,2.8vw,.82rem);
+  line-height:1.65;
+  color:var(--mute);
+  max-width:44ch;
+  margin-top:clamp(16px,3vh,26px);
+  padding-top:clamp(14px,2.6vh,20px);
+  border-top:1px solid var(--rule);
+}
+.product .note a{color:var(--ink)}
+@media (max-width:400px){
+  .pair figcaption{font-size:9px;letter-spacing:.06em}
+}
+
 .lockup{display:flex;align-items:center;gap:clamp(10px,2vw,16px);margin-bottom:clamp(18px,4vh,30px)}
 .lockup img{width:clamp(34px,8vw,52px);height:auto;display:block}
 .lockup .lockmark{width:min(46vw,232px);height:auto}
