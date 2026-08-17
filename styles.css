@@ -304,6 +304,17 @@ dd{
 .people.five .who{font-size:clamp(1.05rem,4.8vw,1.9rem)}
 .people.five .what{margin-top:5px;font-size:10px}
 
+.split .bleed{
+  display:block;
+  width:100%;
+  height:clamp(140px,24vh,240px);
+  object-fit:cover;
+  object-position:center 32%;
+  filter:grayscale(1) contrast(1.05);
+  margin-top:clamp(20px,4vh,34px);
+  border:1px solid var(--rule);
+}
+
 @media (max-width:560px){
   .names li{flex-direction:column;align-items:flex-start;gap:7px}
   .names li span{text-align:left}
@@ -325,6 +336,17 @@ dd{
   .stat:nth-child(odd),.stat:nth-child(even){padding:0 28px}
   .stat:first-child{padding-left:0}
   .stat:last-child{border-right:none}
+  .split{position:relative;padding-right:calc(36% + var(--pad))}
+  .split .bleed{
+    position:absolute;
+    top:0;right:0;bottom:0;
+    width:34%;
+    height:100%;
+    margin:0;
+    object-position:center center;
+    border:none;
+    border-left:1px solid var(--rule);
+  }
 }
 
 @media (prefers-reduced-motion:reduce){
