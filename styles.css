@@ -498,12 +498,12 @@ dd{
 .lockup img{height:clamp(26px,6.2vw,38px);width:auto;display:block}
 .lockup .lockmark{height:clamp(26px,6.2vw,38px);width:auto}
 
-.problem h2{font-size:clamp(1.6rem,6.4vw,3.5rem);max-width:24ch}
+.problem h2{font-size:clamp(1.45rem,6.6vw,3.9rem);max-width:24ch}
 .problem .sub{
-  font-size:clamp(.7rem,2.9vw,.85rem);
-  line-height:1.7;
+  font-size:clamp(.85rem,3.5vw,1.06rem);
+  line-height:1.55;
   color:var(--mute);
-  max-width:42ch;
+  max-width:44ch;
   margin-top:clamp(20px,3.6vh,30px);
   padding-top:0;
   border-top:0;
