@@ -9,9 +9,21 @@ window.JELLIES = [
     handle: '@maja',
     thumb: 'img/sample.jpg'
   },
-  { tag: 'Requesting money' },
+  {
+    tag: 'Requesting money',
+    url: 'https://jellyjelly.com/watch/01KT2GJM25S9WYEGQCS4A68GNY',
+    title: 'Raising awareness for brain cancer, support our GoFundMe',
+    handle: '@fightlikelino',
+    thumb: 'img/jelly2.jpg'
+  },
+  {
+    tag: 'Pitching investors',
+    url: 'https://jellyjelly.com/watch/01KXYC3Y5H1VHWAJVSP4BWRQ4V',
+    title: 'Pitching Racked, a local marketplace, raising $2M',
+    handle: '@jonny',
+    thumb: 'img/jelly3.jpg'
+  },
   { tag: 'Life update' },
   { tag: 'Selling something' },
-  { tag: 'Local recommendation' },
-  { tag: 'Thought / vision' }
+  { tag: 'Local recommendation' }
 ];

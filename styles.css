@@ -285,7 +285,7 @@ dd{
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:clamp(9px,2.4vw,16px);
-  max-width:900px;
+  max-width:1120px;
 }
 .jcard{
   display:block;
