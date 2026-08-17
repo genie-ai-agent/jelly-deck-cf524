@@ -417,10 +417,11 @@ dd{
   line-height:1.7;
   color:var(--mute);
   max-width:42ch;
-  margin-top:clamp(18px,3.4vh,28px);
-  padding-top:clamp(14px,2.6vh,20px);
-  border-top:1px solid var(--rule);
+  margin-top:clamp(20px,3.6vh,30px);
+  padding-top:0;
+  border-top:0;
 }
+.problem .bleed{border:none!important;border-left:0!important}
 @media (max-width:620px){
   .problem .bleed{height:clamp(104px,15vh,150px);margin-top:clamp(16px,2.6vh,22px)}
   .problem .label{margin-bottom:20px}
