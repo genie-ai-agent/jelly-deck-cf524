@@ -303,6 +303,17 @@ dd{
   .shots figcaption{font-size:9px;letter-spacing:.06em}
 }
 
+.team .invest{
+  font-family:'JetBrains Mono',monospace;
+  font-size:clamp(.68rem,2.8vw,.82rem);
+  line-height:1.7;
+  color:var(--mute);
+  max-width:52ch;
+  margin-top:clamp(16px,3vh,26px);
+  padding-top:clamp(14px,2.6vh,20px);
+  border-top:1px solid var(--rule);
+}
+
 .people.five li{padding:clamp(9px,1.8vh,16px) 0;gap:clamp(12px,3vw,22px)}
 .people.five img{width:clamp(40px,10.5vw,60px);height:clamp(40px,10.5vw,60px)}
 .people.five .who{font-size:clamp(1.05rem,4.8vw,1.9rem)}
