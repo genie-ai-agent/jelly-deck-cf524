@@ -265,6 +265,37 @@ dd{
 
 .duo{font-size:clamp(1.85rem,7.2vw,3.9rem);line-height:1.02;max-width:26ch}
 
+.shots{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:clamp(8px,2.2vw,16px);
+  margin-top:clamp(22px,4.5vh,40px);
+  max-width:880px;
+}
+.shots figure{margin:0;min-width:0}
+.shots img{
+  display:block;
+  width:100%;
+  height:auto;
+  aspect-ratio:3/4;
+  object-fit:cover;
+  filter:grayscale(1) contrast(1.06);
+  border:1px solid var(--rule);
+  background:#eee;
+}
+.shots figcaption{
+  margin-top:9px;
+  font-family:'JetBrains Mono',monospace;
+  font-size:10px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--mute);
+  white-space:nowrap;
+}
+@media (max-width:400px){
+  .shots figcaption{font-size:9px;letter-spacing:.06em}
+}
+
 .people.five li{padding:clamp(9px,1.8vh,16px) 0;gap:clamp(12px,3vw,22px)}
 .people.five img{width:clamp(40px,10.5vw,60px);height:clamp(40px,10.5vw,60px)}
 .people.five .who{font-size:clamp(1.05rem,4.8vw,1.9rem)}
