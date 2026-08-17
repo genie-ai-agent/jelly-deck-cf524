@@ -1,3 +1,6 @@
+br.wide { display: none; }
+@media (min-width: 700px) { br.wide { display: inline; } }
+
 :root{
   --ink:#000;
   --paper:#fff;
