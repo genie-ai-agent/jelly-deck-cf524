@@ -229,19 +229,11 @@ dd{
   align-items:center;
   justify-content:center;
   gap:9px;
-  padding:11px 16px 13px;
+  padding:14px 16px 15px;
   background:var(--paper);
   border-top:1px solid var(--rule);
 }
 .navctl{display:flex;align-items:center;gap:22px}
-.credit{
-  font-family:'JetBrains Mono',monospace;
-  font-size:9px;
-  letter-spacing:.2em;
-  text-transform:uppercase;
-  color:var(--mute);
-  text-align:center;
-}
 .nav button{
   appearance:none;
   background:none;
@@ -290,7 +282,6 @@ dd{
 @media (min-width:820px){
   .slide{padding-bottom:calc(var(--pad) + 56px)}
   .nav{flex-direction:row;height:56px;padding:0 var(--pad)}
-  .credit{position:absolute;right:var(--pad);font-size:10px}
   .cover{justify-content:center}
   h2{max-width:24ch}
   .line{max-width:44ch}
